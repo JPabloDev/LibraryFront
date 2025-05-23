@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Alquiler de Libros</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Panel de Administración</h1>
+    <button id="logoutBtn">Cerrar sesión</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#" class="active" onclick="showSection('libros')">📚 Libros</a></li>
+      <li><a href="#" onclick="showSection('usuarios')">👤 Usuarios</a></li>
+      <li><a href="#" onclick="showSection('resumen')">📊 Resumen</a></li>
+      <li><a href="#" onclick="showSection('registroUsuario')">➕ Registrar Usuario</a></li>
+      <li><a href="#" onclick="showSection('registroLibro')">📖 Registrar Libro</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="libros" class="active">
+      <h2>Libros disponibles</h2>
+      <div id="listaLibros"></div>
+    </section>
+
+    <section id="usuarios">
+      <h2>Usuarios registrados</h2>
+      <div id="listaUsuarios"></div>
+    </section>
+
+    <section id="resumen">
+      <h2>Resumen general</h2>
+      <p>Total de libros: <span id="resumenTotal">0</span></p>
+      <p>Libros alquilados: <span id="resumenAlquilados">0</span></p>
+      <p>Libros disponibles: <span id="resumenDisponibles">0</span></p>
+    </section>
+
+
+    <!-- Formulario para registrar usuarios -->
+    <section id="registroUsuario">
+      <h2>Registrar Usuario</h2>
+      <form id="formUsuario" class="formulario">
+        <label for="nombreUsuario">Nombre:</label>
+        <input type="text" id="nombreUsuario" name="nombreUsuario" required />
+
+        <label for="correoUsuario">Correo:</label>
+        <input type="email" id="correoUsuario" name="correoUsuario" required />
+
+        <button type="submit">Registrar Usuario</button>
+        <p id="mensajeUsuario" class="mensaje"></p>
+      </form>
+    </section>
+
+    <!-- Formulario para registrar libros -->
+    <section id="registroLibro">
+      <h2>Registrar Libro</h2>
+      <form id="formLibro" class="formulario">
+        <label for="tituloLibro">Título:</label>
+        <input type="text" id="tituloLibro" name="tituloLibro" required />
+
+        <label for="autorLibro">Autor:</label>
+        <input type="text" id="autorLibro" name="autorLibro" required />
+
+        <label for="estadoLibro">Estado:</label>
+        <select id="estadoLibro" name="estadoLibro" required>
+          <option value="Disponible">Disponible</option>
+          <option value="Alquilado">Alquilado</option>
+        </select>
+
+        <button type="submit">Registrar Libro</button>
+        <p id="mensajeLibro" class="mensaje"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>
