@@ -18,7 +18,7 @@
     <ul>
       <li><a href="#" class="active" onclick="showSection('libros')">📚 Libros</a></li>
       <li><a href="#" onclick="showSection('usuarios')">👤 Usuarios</a></li>
-      <li><a href="#" onclick="showSection('resumen')">📊 Resumen</a></li>
+      <li><a href="#" onclick="showSection('prestamos')">📊 Prestamos</a></li>
       <li><a href="#" onclick="showSection('registroUsuario')">➕ Registrar Usuario</a></li>
       <li><a href="#" onclick="showSection('registroLibro')">📖 Registrar Libro</a></li>
     </ul>
@@ -34,11 +34,9 @@
       <div id="listaUsuarios"></div>
     </section>
 
-    <section id="resumen">
-      <h2>Resumen general</h2>
-      <p>Total de libros: <span id="resumenTotal">0</span></p>
-      <p>Libros alquilados: <span id="resumenAlquilados">0</span></p>
-      <p>Libros disponibles: <span id="resumenDisponibles">0</span></p>
+    <section id="prestamos">
+      <h2>Préstamos realizados</h2>
+      <div id="listaPrestamos"></div>
     </section>
 
 
@@ -48,14 +46,21 @@
       <form id="formUsuario" class="formulario">
         <label for="nombreUsuario">Nombre:</label>
         <input type="text" id="nombreUsuario" name="nombreUsuario" required />
-
-        <label for="correoUsuario">Correo:</label>
-        <input type="email" id="correoUsuario" name="correoUsuario" required />
-
+    
+        <label for="cedulaUsuario">Cédula:</label>
+        <input type="number" id="cedulaUsuario" name="cedulaUsuario" required />
+    
+        <label for="usuarioUsuario">Usuario:</label>
+        <input type="text" id="usuarioUsuario" name="usuarioUsuario" required />
+    
+        <label for="contrasenaUsuario">Contraseña:</label>
+        <input type="password" id="contrasenaUsuario" name="contrasenaUsuario" required />
+    
         <button type="submit">Registrar Usuario</button>
         <p id="mensajeUsuario" class="mensaje"></p>
       </form>
     </section>
+    
 
     <!-- Formulario para registrar libros -->
     <section id="registroLibro">
@@ -63,16 +68,25 @@
       <form id="formLibro" class="formulario">
         <label for="tituloLibro">Título:</label>
         <input type="text" id="tituloLibro" name="tituloLibro" required />
-
+    
         <label for="autorLibro">Autor:</label>
         <input type="text" id="autorLibro" name="autorLibro" required />
-
-        <label for="estadoLibro">Estado:</label>
-        <select id="estadoLibro" name="estadoLibro" required>
-          <option value="Disponible">Disponible</option>
-          <option value="Alquilado">Alquilado</option>
+    
+        <label for="anoLibro">Año de Publicación:</label>
+        <input type="number" id="anoLibro" name="anoLibro" required min="0" />
+    
+        <label for="cantidadTotalLibro">Cantidad Total:</label>
+        <input type="number" id="cantidadTotalLibro" name="cantidadTotalLibro" required min="0" />
+    
+        <label for="cantidadDisponibleLibro">Cantidad Disponible:</label>
+        <input type="number" id="cantidadDisponibleLibro" name="cantidadDisponibleLibro" required min="0" />
+    
+        <label for="activoLibro">Activo:</label>
+        <select id="activoLibro" name="activoLibro" required>
+          <option value="true" selected>Activo</option>
+          <option value="false">Inactivo</option>
         </select>
-
+    
         <button type="submit">Registrar Libro</button>
         <p id="mensajeLibro" class="mensaje"></p>
       </form>
