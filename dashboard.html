@@ -20,7 +20,8 @@
       <li><a href="#" onclick="showSection('usuarios')">👤 Usuarios</a></li>
       <li><a href="#" onclick="showSection('prestamos')">📊 Prestamos</a></li>
       <li><a href="#" onclick="showSection('registroUsuario')">➕ Registrar Usuario</a></li>
-      <li><a href="#" onclick="showSection('registroLibro')">📖 Registrar Libro</a></li>
+      <li><a href="#" onclick="showSection('registroLibro')">➕ Registrar Libro</a></li>
+      <li><a href="#" onclick="showSection('registroPrestamo')">➕ Registro Prestamo</a></li>
     </ul>
   </nav>
   <main>
@@ -89,6 +90,22 @@
     
         <button type="submit">Registrar Libro</button>
         <p id="mensajeLibro" class="mensaje"></p>
+      </form>
+    </section>
+
+    <section id="registroPrestamo">
+      <h2>Registrar Préstamo</h2>
+      <form id="formPrestamo" class="formulario">
+        <label for="libroSelect">Libro:</label>
+        <select id="libroSelect" name="libroSelect" required>
+          <option value="">Cargando libros...</option>
+        </select>
+    
+        <label for="cedulaUsuarioPrestamo">Cédula del Usuario:</label>
+        <input type="text" id="cedulaUsuarioPrestamo" name="cedulaUsuarioPrestamo" required  min="0"/>
+    
+        <button type="submit">Registrar Préstamo</button>
+        <p id="mensajePrestamo" class="mensaje"></p>
       </form>
     </section>
 
